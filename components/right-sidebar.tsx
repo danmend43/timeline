@@ -8,9 +8,9 @@ export function RightSidebar({ className, ...props }: RightSidebarProps) {
   return (
     <aside className={cn("w-72 shrink-0 flex flex-col h-[calc(100vh-7rem)] sticky top-28", className)} {...props}>
       <div className="space-y-6 overflow-y-auto flex-grow">
-        <Card className="border-0 bg-white shadow-sm rounded-3xl">
+        <Card className="border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm rounded-3xl">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg font-bold text-gray-900">Trending Topics</CardTitle>
+            <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">Trending Topics</CardTitle>
           </CardHeader>
           <CardContent className="space-y-1">
             {[
@@ -35,10 +35,13 @@ export function RightSidebar({ className, ...props }: RightSidebarProps) {
                 posts: "956 posts",
               },
             ].map((item, index) => (
-              <div key={index} className="hover:bg-gray-50 p-2 rounded-lg cursor-pointer transition-colors">
-                <div className="text-xs text-gray-400 font-medium mb-1">{item.category}</div>
-                <div className="font-bold text-gray-900 text-sm">{item.topic}</div>
-                <div className="text-xs text-gray-500">{item.posts}</div>
+              <div
+                key={index}
+                className="hover:bg-white-50 dark:hover:bg-gray-700 p-2 rounded-lg cursor-pointer transition-colors"
+              >
+                <div className="text-xs text-gray-400 dark:text-gray-500 font-medium mb-1">{item.category}</div>
+                <div className="font-bold text-gray-900 dark:text-white text-sm">{item.topic}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">{item.posts}</div>
               </div>
             ))}
           </CardContent>
@@ -46,7 +49,7 @@ export function RightSidebar({ className, ...props }: RightSidebarProps) {
       </div>
 
       {/* Footer that stays visible */}
-      <footer className="mt-6 py-4 text-xs text-gray-500 border-t border-gray-200">
+      <footer className="mt-6 py-4 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
         <div className="flex flex-wrap gap-x-2 gap-y-1 mb-2">
           <a href="#" className="hover:underline">
             Termos de Serviço
